@@ -1,0 +1,281 @@
+/* =========================
+   SERVICES SECTION
+========================= */
+
+.services {
+  min-height: 75vh;
+
+  padding: 110px 7%;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background: #0e1018;
+
+  color: #ffffff;
+}
+
+/* Background glow */
+
+.services::before {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  left: -180px;
+  top: 20%;
+
+  background: rgba(91, 140, 255, 0.08);
+
+  filter: blur(110px);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.services-container {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  text-align: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.services .section-subtitle {
+  margin: 0 0 12px;
+
+  color: #9b8aff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.services h2 {
+  margin: 0 0 52px;
+
+  font-size: clamp(36px, 5vw, 50px);
+
+  line-height: 1.15;
+
+  font-weight: 750;
+
+  letter-spacing: -1.5px;
+
+  color: #ffffff;
+}
+
+.services h2::after {
+  content: "";
+
+  display: block;
+
+  width: 55px;
+  height: 4px;
+
+  margin: 18px auto 0;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #7c5cff,
+    #5b8cff
+  );
+}
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  text-align: left;
+}
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.service-card {
+  min-height: 230px;
+
+  padding: 30px 24px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  position: relative;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Small accent line */
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 24px;
+
+  width: 35px;
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: #7c5cff;
+
+  transition: width 0.3s ease;
+}
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.service-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(124, 92, 255, 0.4);
+
+  background: rgba(124, 92, 255, 0.06);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-card:hover::before {
+  width: 65px;
+}
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.service-card h3 {
+  margin: 0 0 14px;
+
+  color: #ffffff;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+/* =========================
+   CARD DESCRIPTION
+========================= */
+
+.service-card p {
+  margin: 0;
+
+  color: #a9afc1;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .services {
+    padding: 90px 5%;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+  }
+
+  .service-card {
+    min-height: 210px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .services {
+    min-height: auto;
+
+    padding: 80px 20px;
+  }
+
+  .services h2 {
+    font-size: 32px;
+
+    margin-bottom: 38px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .service-card {
+    min-height: 190px;
+
+    padding: 28px 22px;
+  }
+}
